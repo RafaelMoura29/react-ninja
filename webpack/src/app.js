@@ -2,15 +2,16 @@
 
 import React, { Component } from 'react'
 import Button from './Button'
+import LikeButton from './Like-button'
+import SearchButton from './Search-button'
+
 
 class App extends Component {
   render() {
     return (
       <div className='container'>
-        <Button>
-          <span>Texto span</span>
-          testo fora span
-        </Button>
+        <LikeButton />
+        <SearchButton />
       </div>
     )
   }
