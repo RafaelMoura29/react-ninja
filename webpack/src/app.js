@@ -5,21 +5,34 @@ import Button from './Button'
 import Square from './Square'
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
-      value: "3",
+      checked: false,
+      showContent: false
     }
   }
   render() {
     return (
       <div>
-        <form>
-        <textarea value={this.state.value} onChange={(e)=>{
-          this.setState({value:e.target.value})
-        }}/>
-        </form>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.checked}
+            onChange={() => {
+              this.setState({ checked: !this.state.checked },
+                () => {
+                  this.setState({ showContent: this.state.checked })
+                }
+              )
+            }}
+          />
+        Mostrar conteúdo
+        </label>
+
+        {this.state.showContent && <div >Olha eu aqui!</div>}
       </div>
+
     )
   }
 }
