@@ -5,24 +5,24 @@ import Button from './Button'
 import Square from './Square'
 
 class App extends Component {
-
-  constructor() {
-    console.log('Constructor')
+  constructor(){
     super()
     this.state = {
+      value: "3",
     }
   }
-
-
   render() {
     return (
       <div>
-       <Button >
-         Clique em mim
-       </Button>
+        <form>
+        <textarea value={this.state.value} onChange={(e)=>{
+          this.setState({value:e.target.value})
+        }}/>
+        </form>
       </div>
     )
   }
 }
+
 
 export default App
